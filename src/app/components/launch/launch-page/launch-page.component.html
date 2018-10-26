@@ -1,0 +1,6 @@
+<div *ngIf="launch">
+  <nav>
+      <a [routerLink]="['/']">Home</a> &gt; <a [routerLink]="['/launches', launch?.status]">Launches</a> &gt; <span>{{ launch.name }} </span>
+  </nav>
+  <app-launch-view [launch]="launch"></app-launch-view>
+</div>

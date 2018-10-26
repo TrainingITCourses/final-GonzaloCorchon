@@ -1,0 +1,13 @@
+table { width: 100%; border-collapse: collapse; border:none;}
+tr { border-bottom: 1px solid #ccc;}
+tr:nth-child(2n) { background-color: #eee;}
+th:last-child { cursor: pointer; width: 150px;}
+th img {
+    display: inline-block;
+    width:20px;
+    height:auto;
+}
+
+td:last-child { width:150px;}
+
+td a { display: block; text-decoration: underline; }

@@ -1,0 +1,4 @@
+.rocket img { width: 100px; height:auto; display:block;}
+
+.field { display: flex; margin-bottom:20px;}
+.field > *:first-child { min-width: 200px; text-align:right; margin-right:20px;}

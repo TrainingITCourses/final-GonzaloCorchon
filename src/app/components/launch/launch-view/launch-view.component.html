@@ -1,0 +1,42 @@
+<div *ngIf="launch">
+    <h1>{{ launch.name }}</h1>
+    <div>
+        <div class="field" *ngIf="launch.lsp">
+            <strong>Agency</strong>
+            <span>{{ launch.lsp.name}}</span>
+          </div>
+        <div class="field" *ngIf="launch.location">
+          <strong>Location</strong>
+          <span><a [href]="launch.location.infoURL">{{ launch.location.name}}</a></span>
+        </div>
+        <div class="field" *ngIf="launch.rocket">
+            <strong>Rocket</strong>
+            <div class="rocket">
+                <span>{{ launch.rocket.name}}</span>
+                <img [src]="launch.rocket.imageURL" [alt]="launch.rocket.name" />
+            </div>
+        </div>
+        <div class="field">
+            <strong>ISO Start</strong>
+            <span>{{ launch.isostart | date:'dd/MM/yyyy HH:mm'}}</span>
+        </div>
+        <div class="field">
+            <strong>ISO End</strong>
+            <span>{{ launch.isoend | date:'dd/MM/yyyy HH:mm'}}</span>
+        </div>
+        <div class="field" *ngIf="launch.missions.length > 0">
+          <strong>Missions</strong>
+          <div class="missions">
+            <div *ngFor="let mission of launch.missions">
+                <strong>{{ mission.name }}</strong>
+                <p>{{ mission.description }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="field" *ngIf="launch.failreason">
+            <strong>Fail reason</strong>
+            <span>{{ launch.failreason }}</span>
+        </div>
+    </div>
+</div>

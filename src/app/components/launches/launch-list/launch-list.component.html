@@ -1,0 +1,19 @@
+<div>
+    {{ launches.length }} {{ launches.length != 1 ? "launches" : "launch"}} 
+</div>
+<table *ngIf="launches.length > 0">
+  <thead>
+    <tr>
+      <th>Launch</th>
+      <th (click)="sortChanged()">Date <img [src]="sortMode==SortMode.Ascending ? '../assets/img/asc.svg' : '../assets/img/desc.svg'" alt=""/></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let launch of launches">
+      <td><a [routerLink]="['/launch/', launch.id]">{{ launch.name }}</a></td>
+      <td>{{ launch.isostart | date:'dd/MM/yyyy HH:mm'}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p *ngIf="launches.length == 0">Sorry, no launches avaible for this status</p>
